@@ -1,0 +1,1543 @@
+/* /////////////////////////////////////////////////// style reset */
+.wpib {
+	margin: 0px !important;
+	padding: 0px !important;
+	border: 0 !important;
+	font-size: 100% !important;
+	font: inherit !important;
+	vertical-align: baseline !important;
+	font-family: "Helvetica Neue", Helvetica, Arial !important !important;
+	text-align: left !important;
+}
+
+/* /////////////////////////////////////////////////// ib-grouping */
+
+.ib-group:before, .ib-group:after, .tt-suggestion:before, .tt-suggestion:after {  content: "";  display: table; } 
+.ib-group:after, .tt-suggestion:after { clear: both; }
+.ib-group, .tt-suggestion { zoom: 1; /* For IE 6/7 (trigger hasLayout) */ }
+
+
+/* /////////////////////////////////////////////////// Sprite  */
+
+/* for all the old browsers */
+.ibSprite {
+	background-image: url('../img/sprite.png');
+	background-repeat: no-repeat;
+	-webkit-transition-duration: 0;
+	-moz-transition-duration: 0;
+	transition-duration: 0;
+}
+
+/* for the real browsers */
+
+@media screen and (min-width: 1px) {
+	  .ibSprite {
+	  background-image: url('../img/sprite.svg');
+	  background-repeat: no-repeat;
+	  }
+}
+
+
+/* /////////////////////////////////////////////////// Dialog */
+
+#instantButlerDialog {
+  display: none;
+  height: auto !important;	
+  overflow: visible !important;
+  position: fixed !important;
+  width: 480px !important;
+  z-index: 9999 !important;
+  left: 50% !important;
+  margin-left: -240px !important;
+  top:20% !important;
+  font-family: "Helvetica Neue", Helvetica, Arial !important;
+  top:40% !important;
+  margin-top: -41px !important;
+  font-weight: 400 !important;
+
+}
+
+#instantButlerDialog .ib-container {
+	padding: 20px !important;;
+	background: #2B2B2B !important;
+}
+
+
+#instantButlerDialog .ib-whitearea {
+	background: #FFF  !important;
+	position: relative !important;
+}
+
+
+/* powered by */
+
+#instantButlerDialog .ib-poweredby {
+	position: absolute;
+	right: -20px;
+	bottom: -40px;
+	display: none;
+}
+
+#instantButlerDialog .ib-poweredby a {
+	text-decoration: none !important;
+}
+
+#instantButlerDialog .ib-poweredby a:hover {
+	color: #4f617e !important;
+}
+
+/* icons */
+
+#instantButlerDialog .ib-whitearea .ib-tools {
+	float: right !important;
+	padding-top: 10px !important;
+	margin-right: 2px !important;
+}
+
+#instantButlerDialog .ib-whitearea .ib-tools .icon {
+	display: block !important;
+	width: 20px !important;
+	height: 20px !important;
+	float: left !important;
+	margin-right: 8px !important;
+}
+
+ 
+#instantButlerDialog .ib-whitearea .ib-tools .icon.help { background-position: -5px -30px !important;  }
+#instantButlerDialog .ib-whitearea .ib-tools .icon.help:hover { background-position: -31px -30px !important; }
+
+#instantButlerDialog .ib-whitearea .ib-tools .icon.settings { background-position: -5px -5px !important; }
+#instantButlerDialog .ib-whitearea .ib-tools .icon.settings:hover { background-position: -30px -5px !important; }
+
+
+
+/* form */
+
+#instantButlerDialog #wp-instantButler-form {
+	width: 370px !important;
+	display: block !important;
+	margin:0 !important;
+	padding:0 !important;
+	float: left !important;
+	margin-right: 10px !important;
+}
+
+#instantButlerDialog #wp-instantButler-form input {
+	width: 92% !important;
+	border: 0px !important;
+	-moz-border-radius: 0px !important;
+	-webkit-border-radius: 0px !important;
+	border-radius: 0px !important;
+	font-size: 14px !important;
+	-moz-box-shadow: 0px 0px 0px rgba(0,0,0,0) !important;
+	-webkit-box-shadow: 0px 0px 0px rgba(0,0,0,0) !important;
+	box-shadow: 0px 0px 0px rgba(0,0,0,0) !important;
+	height: 40px !important;
+	margin: 0px !important;
+	padding: 0px 15px 0px 15px !important;
+	color: #282828 !important;
+}
+
+#instantButlerDialog #wp-instantButler-form  .twitter-typeahead {
+	width: 100% !important;
+}
+
+
+
+/* overlay */
+
+#instantButlerOverlay {
+	background-color: rgba(0,0,0, 0.3) !important;
+	position: fixed  !important;
+	top:0px  !important;
+	left: 0px  !important;
+	bottom: 0px  !important;
+	right: 0px !important;
+	z-index: 9997 !important;
+	display: none;
+}
+
+
+
+/* Namespaced Butler Widget */
+.instantButler-ui-widget {
+  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.3), 0 0 5px rgba(0, 0, 0, 0.6) !important; }
+
+
+/* typeahead */
+#instantButlerDialog .typeahead,
+#instantButlerDialog .tt-query,
+#instantButlerDialog .tt-hint {
+  width: 396px !important;
+  height: 30px !important;
+  padding: 8px 12px !important;
+  font-size: 24px !important;
+  line-height: 30px !important;
+  border: 2px solid #ccc !important;
+  outline: none !important;
+}
+
+#instantButlerDialog .typeahead {
+  background-color: #fff !important;
+}
+
+#instantButlerDialog .typeahead:focus {
+  border: 2px solid #0097cf !important;
+}
+
+#instantButlerDialog .tt-query {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !important;
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !important;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !important;
+}
+
+#instantButlerDialog a {
+  color: #FFF !important;
+}
+
+#instantButlerDialog .tt-dropdown-menu {
+	top: 60px !important;
+	left: -20px !important;
+	width: 480px  !important;
+	color: #FFF !important;
+	position: relative;
+	-moz-box-shadow: 0px 3px 1px rgba(0,0,0,0.14) !important;
+	-webkit-box-shadow: 0px 3px 1px rgba(0,0,0,0.14) !important;
+	box-shadow: 0px 3px 1px rgba(0,0,0,0.14) !important;
+}
+
+#instantButlerDialog .tt-dropdown-menu .tt-dataset-0 {
+	position: relative !important;
+}
+
+
+#instantButlerDialog .tt-suggestion {
+	padding: 17px 15px 12px 15px !important;
+	font-size: 14px !important;
+	line-height: 24px !important;
+	clear: both !important;
+	
+	border-bottom: 1px solid #404040 !important;
+	border-top: 1px solid #888888 !important;
+
+    /* Fallback for web browsers that don't support RGBa */
+    background-color: rgb(67,67,67);
+    /* RGBa with 0.6 opacity */
+    background-color: rgba(82,82,82,0.9);
+    position: relative !important;
+}
+
+#instantButlerDialog .tt-suggestion.tt-is-under-cursor {
+	color: #fff;
+	
+	/* Fallback for web browsers that don't support RGBa */
+	background-color: rgb(78, 98, 125);
+	/* RGBa with 0.6 opacity */
+	background-color: rgba(78, 98, 125, 0.95);
+	
+	/* Fallback for web browsers that don't support RGBa */
+	border-top: 1px solid rgb(78, 98, 125);
+	/* RGBa with 0.6 opacity */
+	border-top: 1px solid rgba(78, 98, 125, 0.95);
+
+}
+
+#instantButlerDialog .tt-suggestion div.wpib-title {
+	margin: 0 !important;
+	display: block !important;
+	float: left !important;
+	line-height: 130% !important;
+	width: 82% !important;
+	padding-left: 1% !important;
+}
+
+#instantButlerDialog .tt-suggestion .icon-post {
+	width: 16px;
+	height: 16px;
+	float: left !important;
+	display: block !important;
+	margin-right: 6px !important;
+	margin-top: -2px !important;
+}
+
+#instantButlerDialog .gist {
+	font-size: 14px !important;
+}
+
+
+
+/* figure */
+
+#instantButlerFigure {
+	background-image: url('../img/instantbutler-figure.png') !important;
+	background-repeat: no-repeat !important;
+	background-size: 100% !important;
+	width: 260px !important;
+	height: 200px !important;
+	position: fixed !important;
+	left: 50% !important;
+	margin-left: -115px !important;
+	top:40% !important;
+	z-index: 9998 !important;
+	margin-top: -190px !important;
+	
+}
+
+
+
+/* Icons */
+
+#instantButlerDialog .wpib-icon {
+	width: 16px !important;
+	height: 16px !important;
+	padding: 6px !important;
+	display: block !important;
+	float: left !important;
+	margin-top: -6px !important;
+	margin-right: 4px !important;
+	-webkit-box-sizing: content-box !important;
+}
+
+#instantButlerDialog .wpib-icon img {
+	width: 100% !important;
+	vertical-align: top !important;
+}
+
+/* standard wp icons - old wordpress versions */
+#instantButlerDialog .wpib-icons-sprite { background-image: url('../../../../wp-admin/images/menu.png'); background-position: -269px -33px;  }
+#instantButlerDialog .wpib-icons-sprite.wpib-icon-post 		{ 	background-position: -269px -33px; 	}
+#instantButlerDialog .wpib-icons-sprite.wpib-icon-media 		{ 	background-position: -119px -33px;  }
+#instantButlerDialog .wpib-icons-sprite.wpib-icon-page 		{ 	background-position: -149px -33px;  }
+#instantButlerDialog .wpib-icons-sprite.wpib-icon-comments  	{ 	background-position: -29px -33px; 	}
+#instantButlerDialog .wpib-icons-sprite.wpib-icon-apperance	{ 	background-position: 1px -33px; 	}
+#instantButlerDialog .wpib-icons-sprite.wpib-icon-plugins  	{ 	background-position: -179px -33px;	}
+#instantButlerDialog .wpib-icons-sprite.wpib-icon-users  		{ 	background-position: -300px -33px;  }
+#instantButlerDialog .wpib-icons-sprite.wpib-icon-tools 		{  	background-position: -209px -33px; 	}
+#instantButlerDialog .wpib-icons-sprite.wpib-icon-settings 	{ 	background-position: -239px -33px;  }
+#instantButlerDialog .wpib-icons-sprite.wpib-icon-generic 	{  	background-position: -330px -33px;	}
+#instantButlerDialog .wpib-icons-sprite.wpib-icon-links		{	background-position: -89px -33px;	}
+
+/* standard wp icons - branch 3.8 */
+
+#instantButlerDialog.wpib-use-admin-colors  .wpib-icon {
+	font: 400 20px/1 dashicons!important;
+	background: none !important;
+}
+
+#instantButlerDialog.wpib-use-admin-colors  .wpib-icons-sprite.wpib-icon-dashboard:before 		{ 	content: '\f226';	}
+#instantButlerDialog.wpib-use-admin-colors  .wpib-icons-sprite.wpib-icon-post:before 		{ 	content: '\f109';	}
+#instantButlerDialog.wpib-use-admin-colors  .wpib-icons-sprite.wpib-icon-media:before  		{ 	content: '\f104';  }
+#instantButlerDialog.wpib-use-admin-colors  .wpib-icons-sprite.wpib-icon-page:before  		{ content: '\f105';	 }
+#instantButlerDialog.wpib-use-admin-colors  .wpib-icons-sprite.wpib-icon-comments:before   	{  content: '\f101';	 	}
+#instantButlerDialog.wpib-use-admin-colors  .wpib-icons-sprite.wpib-icon-appearance:before 	{ 	content: '\f100'; 	}
+#instantButlerDialog.wpib-use-admin-colors  .wpib-icons-sprite.wpib-icon-plugins:before   	{ 	content: '\f106';	}
+#instantButlerDialog.wpib-use-admin-colors  .wpib-icons-sprite.wpib-icon-users:before   		{ content: '\f110';	  }
+#instantButlerDialog.wpib-use-admin-colors  .wpib-icons-sprite.wpib-icon-tools:before  		{  content: '\f107';		}
+#instantButlerDialog.wpib-use-admin-colors  .wpib-icons-sprite.wpib-icon-settings:before  	{  content: '\f108';  }
+#instantButlerDialog.wpib-use-admin-colors  .wpib-icons-sprite.wpib-icon-generic:before  	{  content: '\f111'; 	}
+#instantButlerDialog.wpib-use-admin-colors  .wpib-icons-sprite.wpib-icon-links:before 		{	content: "\f103";	}
+
+
+
+/* thumbnail */
+
+/* standard wp icons */
+#instantButlerDialog .wpib-postthumbnail {
+	width: 28px !important;
+	height: 28px !important;
+	position: absolute !important;
+	right: 20px !important;
+	top: 12px !important;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+#instantButlerDialog .wpib-postthumbnail img {
+	width: 100% !important;
+	height: 100% !important;
+	-moz-border-radius: 100px !important;
+	-webkit-border-radius: 100px !important;
+	border-radius: 100px !important;
+}
+
+#instantButlerDialog .tt-is-under-cursor .wpib-postthumbnail {
+	width: 150px !important;
+	height: 150px !important;
+	z-index: 9999 !important;
+	right: -42px !important;
+	top: -45px !important;
+
+}
+
+
+/* /////////////////////////////////////////////////// Backend */
+
+/* menu icon */
+
+a.toplevel_page_instantButler_page .wp-menu-image img {
+	opacity: 1 !important;
+}
+
+/* wrap */
+
+.wpib-backend-wrap {
+	width: 830px;
+	min-height: 800px;
+}
+
+.wpib-backend-inner-wrap {
+
+}
+
+/* general stuff */
+
+.wpib-backend-wrap span.strong {
+	font-weight: bold;
+}
+
+
+/* buttons */
+
+.wpib-own-style .wpib-frame .button {		/* reset for older WP versions */
+	height: auto;
+	background: none;
+}
+
+.wpib-backend-wrap .button {
+	margin-right: 5px;
+}
+
+.wpib-backend-wrap .button .fa {
+	margin-right: 5px;
+}	
+
+.wpib-backend-button, .wpib-own-style .wpib-frame .button  {
+	background-color: #b3b7bb;
+	box-shadow: 0px 3px 0px 0px #7f8c8d;
+	margin-right: 10px;
+	padding: 12px 20px 12px 20px;
+	font-size: 14px;
+	line-height: 100%;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+	color: #fff;
+	display:inline-block;
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+	font-weight: normal;
+	transition: background 0.1s ease-in-out;
+	-webkit-transition: background 0.1s ease-in-out;
+	-moz-transition: background 0.1s ease-in-out;
+	-ms-transition: background 0.1s ease-in-out;
+	-o-transition: background 0.1s ease-in-out;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	color: #fff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	border: 0;
+}
+
+.wpib-backend-button, .wpib-own-style .wpib-frame .button, .wpib-backend-button:hover, .wpib-own-style .wpib-frame .button:hover .wpib-backend-button:active, .wpib-own-style .wpib-frame .button:active {
+	outline: 0 none;
+	text-decoration: none;
+	color: #fff;
+}
+
+.wpib-backend-button:hover, .wpib-own-style .wpib-frame .button:hover {
+	background-color: #a7aeb1;
+	color: #FFF;
+}
+
+.wpib-backend-button:active, .wpib-own-style .wpib-frame .button:active {
+	box-shadow: 0px 1px 0px 0px #90999e;
+	padding-top: 13px;
+    margin-bottom: -1px;
+}
+
+/* sizes */
+.wpib-backend-button.smallButton, .wpib-own-style .wpib-frame .button { padding: 8px 12px 8px 12px; font-size: 13px; }
+.wpib-backend-button.smallButton:active, .wpib-own-style .wpib-frame .button:active { padding-top: 9px; margin-bottom: -1px; }
+
+/* colors */
+
+.wpib-backend-button.greyButton, .wpib-own-style .wpib-frame .button { background: none; 	background-color: #bdc3c7; box-shadow: 0px 3px 0px 0px #7f8c8d; }
+.wpib-backend-button.greyButton:active, .wpib-own-style .wpib-frame .button:active { box-shadow: 0px 1px 0px 0px #90999e; }
+.wpib-backend-button.greyButton:hover, .wpib-own-style .wpib-frame .button:hover { background: none; background-color: #afb8bc; }
+
+.wpib-backend-button.greenButton, .wpib-own-style .wpib-frame .button.button-primary  { background: none;	background-color: #2ecc71; box-shadow: 0px 3px 0px 0px #27ae60;  }
+.wpib-backend-button.greenButton:active, .wpib-own-style .wpib-frame .button.button-primary:active { box-shadow: 0px 1px 0px 0px #19924c; }
+.wpib-backend-button.greenButton:hover, .wpib-own-style .wpib-frame .button.button-primary:hover { background-color: #26c769; }
+
+
+/* button icons */
+
+.wpib-backend-button .fa, .wpib-own-style .wpib-frame .button .fa {
+	margin-right: 5px;
+	width: 13px;
+}
+
+.wpib-backend-button.smallButton .fa {
+	margin-right: 2px;
+}
+
+
+/* header */
+
+
+.wpib-backend-wrap .wbib-backend-header {
+	margin-top: 15px;
+	margin-bottom: 20px;
+
+}
+
+.wpib-backend-wrap .wbib-backend-header .wpib-logo  {
+	width: 52px;
+	height: 52px;
+	background-position: -60px -5px;
+	float: left;
+}
+
+.wpib-backend-wrap .wbib-backend-header h2 {
+	float: left;
+	display: block;
+	margin-top: 10px;
+	margin-top: 18px;
+	margin-left: 9px;
+	color: #424242;
+	
+}
+
+
+/* Tabs */
+
+.wpib-backend-wrap div.updated {
+	margin-bottom: 25px;
+}
+
+.wpib-backend-wrap .wpib-backend-tabs {
+	height: 65px;
+	margin-top: 15px;
+	display:table;
+	width: 832px;
+}
+
+.wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab  {
+	display:table-cell;
+	text-align: center;
+}
+
+.wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab .wpib-backend-tab-button  {
+	background: #4f617e;
+	color: #FFF;
+	cursor: pointer;
+	margin-right: 8px;
+	padding: 12px 5px 12px 5px;
+	position: relative;
+	display: block;
+	text-decoration: none;
+}
+
+.wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.last  {
+	margin-right: 0;
+}
+
+.wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button:hover, .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button  {
+	background: #5f7392;
+	text-decoration: none;
+}
+.wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button .wpib-arrow {
+	width: 0; 
+	height: 0; 
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-top: 12px solid #4f617e;
+	position: absolute;
+	left: 50%;
+	margin-left: -12px;
+	bottom: -9px;
+	display: none;
+}
+
+.wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button .wpib-arrow  {
+	display: block;
+}
+
+.wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button:hover .wpib-arrow, .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button .wpib-arrow {
+	border-top: 12px solid #5f7392;
+}
+
+.wpib-backend-tab-content .wpib-backend-status {
+	margin-top: 6px;
+	margin-left: 8px;
+	display: inline-block;
+}
+
+.wpib-backend-tab-content {
+	position: relative;
+}
+
+/* Current theme specific */
+
+	/* Midnight */
+	.admin-color-midnight.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button:hover, 
+	.admin-color-midnight.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button  {
+		background: #e14d43;
+	}
+	
+	.admin-color-midnight.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button:hover .wpib-arrow, 
+	.admin-color-midnight.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button .wpib-arrow  {
+		border-top-color: #e14d43;
+	}
+	
+	.admin-color-midnight.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button {
+		background: #363B3F;
+	}
+	
+	#instantButlerDialog.admin-color-midnight.wpib-use-admin-colors .ib-container {
+	    background-color: #25282b;
+	    background-color: rgba(37,40,43, 0.95);
+	}
+	
+	#instantButlerDialog.admin-color-midnight.wpib-use-admin-colors .tt-suggestion {
+		background-color: #363B3F;
+		background-color: rgba(54,59,63, 0.90);
+		border-bottom: 1px solid #25282b;
+		border-top: 1px solid #696e74;
+	}
+	
+	#instantButlerDialog.admin-color-midnight.wpib-use-admin-colors .tt-suggestion.tt-is-under-cursor { background-color: rgb(225, 77, 67); }
+	
+	#instantButlerDialog.admin-color-midnight.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.help { background-position: -5px -82px;  }
+	#instantButlerDialog.admin-color-midnight.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.help:hover { background-position: -31px -82px; }
+	#instantButlerDialog.admin-color-midnight.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.settings { background-position: -5px -57px; }
+	#instantButlerDialog.admin-color-midnight.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.settings:hover { background-position: -30px -57px; }
+	
+	.admin-color-midnight.wpib-use-admin-colors .wpib-backend-textfield-container .wpib-backend-texfield-block label:hover, wpib-backend-wrap a {
+		color: #e14d43;
+	}
+	
+	
+	/* coffee */
+	.admin-color-coffee.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button:hover, 
+	.admin-color-coffee.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button  {
+		background: #c7a589;
+	}
+	
+	.admin-color-coffee.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button:hover .wpib-arrow, 
+	.admin-color-coffee.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button .wpib-arrow  {
+		border-top-color: #c7a589;
+	}
+	
+	.admin-color-coffee.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button {
+		background: #59524c;
+	}
+	
+	#instantButlerDialog.admin-color-coffee.wpib-use-admin-colors .ib-container {
+	    background-color: #46403c;
+	    background-color: rgba(70,64,60, 0.95);
+	}
+	
+	#instantButlerDialog.admin-color-coffee.wpib-use-admin-colors .tt-suggestion {
+		background-color: #59524c;
+		background-color: rgba(89,82,76, 0.90);
+		border-bottom: 1px solid #46403c;
+		border-top: 1px solid #737373;
+	}
+	
+	#instantButlerDialog.admin-color-coffee.wpib-use-admin-colors .tt-suggestion.tt-is-under-cursor { background: #c7a589; background-color: rgb(199,165,137); }
+	
+	#instantButlerDialog.admin-color-coffee.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.help { background-position: -5px -133px;  }
+	#instantButlerDialog.admin-color-coffee.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.help:hover { background-position: -31px -133px; }
+	#instantButlerDialog.admin-color-coffee.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.settings { background-position: -5px -108px; }
+	#instantButlerDialog.admin-color-coffee.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.settings:hover { background-position: -30px -108px; }
+	
+	.admin-color-coffee.wpib-use-admin-colors .wpib-backend-textfield-container .wpib-backend-texfield-block label:hover, .admin-color-coffee.wpib-use-admin-colors wpib-backend-wrap a {
+		color: #9ea476;
+	}
+		
+
+	/* fresh */
+	.admin-color-fresh.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button:hover, 
+	.admin-color-fresh.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button  {
+		background: #0074a2;
+	}
+	
+	.admin-color-fresh.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button:hover .wpib-arrow, 
+	.admin-color-fresh.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button .wpib-arrow  {
+		border-top-color: #0074a2;
+	}
+	
+	.admin-color-fresh.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button {
+		background: #222222;
+	}
+	
+	#instantButlerDialog.admin-color-fresh.wpib-use-admin-colors .ib-container {
+	    background-color: #222222;
+	    background-color: rgba(34,34,34, 0.95);
+	}
+	
+	#instantButlerDialog.admin-color-fresh.wpib-use-admin-colors .tt-suggestion {
+		background-color: #333;
+		background-color: rgba(51,51,51, 0.90);
+		border-bottom: 1px solid #222222;
+		border-top: 1px solid #626262;
+	}
+	
+	#instantButlerDialog.admin-color-fresh.wpib-use-admin-colors .tt-suggestion.tt-is-under-cursor {  background-color: #0074a2; background-color: rgba(0,116,162, 0.90); }
+	
+	#instantButlerDialog.admin-color-fresh.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.help { background-position: -5px -184px;  }
+	#instantButlerDialog.admin-color-fresh.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.help:hover { background-position: -31px -184px; }
+	#instantButlerDialog.admin-color-fresh.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.settings { background-position: -5px -159px; }
+	#instantButlerDialog.admin-color-fresh.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.settings:hover { background-position: -30px -159px; }
+	
+	.admin-color-fresh.wpib-use-admin-colors .wpib-backend-textfield-container .wpib-backend-texfield-block label:hover, wpib-backend-wrap a {
+		color: #2ea2cc;
+	}
+
+	/* light */
+	.admin-color-light.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button:hover, 
+	.admin-color-light.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button  {
+		background: #04a4cc;
+	}
+	
+	.admin-color-light.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button:hover .wpib-arrow, 
+	.admin-color-light.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button .wpib-arrow  {
+		border-top-color: #04a4cc;
+	}
+	
+	.admin-color-light.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button {
+		background: #999;
+	}
+	
+	#instantButlerDialog.admin-color-light.wpib-use-admin-colors .ib-container {
+	    background-color: #999;
+	    background-color: rgba(153,153,153, 0.95);
+	}
+	
+	#instantButlerDialog.admin-color-light.wpib-use-admin-colors .tt-suggestion {
+		background-color: #e5e5e5;
+		background-color: rgba(229,229,229, 0.90);
+		border-top: 0px;
+		border-bottom: 1px solid #b9b9b9;
+	}
+	
+	#instantButlerDialog.admin-color-light.wpib-use-admin-colors .tt-suggestion .wpib-title, #instantButlerDialog.admin-color-light.wpib-use-admin-colors .tt-suggestion .wpib-icon {
+		color: #333;
+	}
+	
+	#instantButlerDialog.admin-color-light.wpib-use-admin-colors .tt-suggestion.tt-is-under-cursor {  background-color: #0074a2; background-color: rgba(0,116,162, 0.90);  }
+	
+	#instantButlerDialog.admin-color-light.wpib-use-admin-colors .tt-suggestion.tt-is-under-cursor .wpib-title ,
+	#instantButlerDialog.admin-color-light.wpib-use-admin-colors .tt-suggestion.tt-is-under-cursor .wpib-icon { color: #FFF; }
+	
+	#instantButlerDialog.admin-color-light.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.help { background-position: -5px -235px;  }
+	#instantButlerDialog.admin-color-light.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.help:hover { background-position: -31px -235px; }
+	#instantButlerDialog.admin-color-light.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.settings { background-position: -5px -210px; }
+	#instantButlerDialog.admin-color-light.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.settings:hover { background-position: -30px -210px; }
+	
+	.admin-color-light.wpib-use-admin-colors .wpib-backend-textfield-container .wpib-backend-texfield-block label:hover, wpib-backend-wrap a {
+		color: #2ea2cc;
+	}
+	
+	/* blue */
+	.admin-color-blue.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button:hover, 
+	.admin-color-blue.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button  {
+		background: #096484;
+	}
+	
+	.admin-color-blue.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button:hover .wpib-arrow, 
+	.admin-color-blue.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button .wpib-arrow  {
+		border-top-color: #096484;
+	}
+	
+	.admin-color-blue.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button {
+		background: #52accc;
+	}
+	
+	#instantButlerDialog.admin-color-blue.wpib-use-admin-colors .ib-container {
+	    background-color: #096484;
+	    background-color: rgba(9,100,132, 0.95);
+	}
+	
+	#instantButlerDialog.admin-color-blue.wpib-use-admin-colors .tt-suggestion {
+		background-color: #4796b3;
+		background-color: rgba(71,150,179, 0.90);
+		border-bottom: 1px solid #096484;
+		border-top: 1px solid #95d2e8;
+	}
+	
+	#instantButlerDialog.admin-color-blue.wpib-use-admin-colors .tt-suggestion.tt-is-under-cursor {  background-color: #52accc; background-color: rgba(82,172,204, 0.90); }
+	
+	#instantButlerDialog.admin-color-blue.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.help { background-position: -5px -286px;  }
+	#instantButlerDialog.admin-color-blue.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.help:hover { background-position: -31px -286px; }
+	#instantButlerDialog.admin-color-blue.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.settings { background-position: -5px -261px; }
+	#instantButlerDialog.admin-color-blue.wpib-use-admin-colors .ib-whitearea .ib-tools .icon.settings:hover { background-position: -30px -261px; }
+	
+	.admin-color-blue.wpib-use-admin-colors .wpib-backend-textfield-container .wpib-backend-texfield-block label:hover, wpib-backend-wrap a {
+		color: #4796b3;
+	}
+
+
+	/* ectoplasm */
+	.admin-color-ectoplasm.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button:hover, 
+	.admin-color-ectoplasm.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button  {
+		background: #a3b745;
+	}
+	
+	.admin-color-ectoplasm.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button:hover .wpib-arrow, 
+	.admin-color-ectoplasm.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button .wpib-arrow  {
+		border-top-color: #a3b745;
+	}
+	
+	.admin-color-ectoplasm.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button {
+		background: #523f6d;
+	}
+	
+	.admin-color-ectoplasm#instantButlerDialog.wpib-use-admin-colors  .ib-container {
+	    background-color: #413256;
+	    background-color: rgba(65,50,86, 0.95);
+	}
+	
+	.admin-color-ectoplasm#instantButlerDialog.wpib-use-admin-colors  .tt-suggestion {
+		background-color: #523f6d;
+		background-color: rgba(82,63,109, 0.90);
+		border-bottom: 1px solid #413256;
+		border-top: 1px solid #886eab;
+	}
+	
+	.admin-color-ectoplasm#instantButlerDialog.wpib-use-admin-colors  .tt-suggestion.tt-is-under-cursor {  background-color: #a3b745; background-color: rgba(163,183,69, 0.90); }
+	
+	.admin-color-ectoplasm#instantButlerDialog.wpib-use-admin-colors  .ib-whitearea .ib-tools .icon.help { background-position: -5px -337px;  }
+	.admin-color-ectoplasm#instantButlerDialog.wpib-use-admin-colors  .ib-whitearea .ib-tools .icon.help:hover { background-position: -31px -337px; }
+	.admin-color-ectoplasm#instantButlerDialog.wpib-use-admin-colors  .ib-whitearea .ib-tools .icon.settings { background-position: -5px -312px; }
+	.admin-color-ectoplasm#instantButlerDialog.wpib-use-admin-colors  .ib-whitearea .ib-tools .icon.settings:hover { background-position: -30px -312px; }
+	
+	.admin-color-ectoplasm.wpib-use-admin-colors .wpib-backend-textfield-container .wpib-backend-texfield-block label:hover, wpib-backend-wrap a {
+		color: #523f6d;
+	}
+	
+	
+	/* ocean */
+	.admin-color-ocean.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button:hover, 
+	.admin-color-ocean.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button  {
+		background: #9ebaa0;
+	}
+	
+	.admin-color-ocean.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button:hover .wpib-arrow, 
+	.admin-color-ocean.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button .wpib-arrow  {
+		border-top-color: #9ebaa0;
+	}
+	
+	.admin-color-ocean.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button {
+		background: #738e96;
+	}
+	
+	.admin-color-ocean#instantButlerDialog.wpib-use-admin-colors  .ib-container {
+	    background-color: #627c83;
+	    background-color: rgba(98,124,131, 0.95);
+	}
+	
+	.admin-color-ocean#instantButlerDialog.wpib-use-admin-colors  .tt-suggestion {
+		background-color: #738e96;
+		background-color: rgba(115,142,150, 0.90);
+		border-bottom: 1px solid #627c83;
+		border-top: 1px solid #a3b7bd;
+	}
+	
+	.admin-color-ocean#instantButlerDialog.wpib-use-admin-colors  .tt-suggestion.tt-is-under-cursor {  background-color: #9ebaa0; background-color: rgba(158,186,160, 0.90); }
+	
+	.admin-color-ocean#instantButlerDialog.wpib-use-admin-colors  .ib-whitearea .ib-tools .icon.help { background-position: -5px -388px;  }
+	.admin-color-ocean#instantButlerDialog.wpib-use-admin-colors  .ib-whitearea .ib-tools .icon.help:hover { background-position: -31px -388px; }
+	.admin-color-ocean#instantButlerDialog.wpib-use-admin-colors  .ib-whitearea .ib-tools .icon.settings { background-position: -5px -363px; }
+	.admin-color-ocean#instantButlerDialog.wpib-use-admin-colors  .ib-whitearea .ib-tools .icon.settings:hover { background-position: -30px -363px; }
+	
+	.admin-color-ocean.wpib-use-admin-colors .wpib-backend-textfield-container .wpib-backend-texfield-block label:hover, wpib-backend-wrap a {
+		color: #627c83;
+	}
+	
+	
+	/* sunrise */
+	.admin-color-sunrise.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button:hover, 
+	.admin-color-sunrise.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button  {
+		background: #dd823b;
+	}
+	
+	.admin-color-sunrise.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button:hover .wpib-arrow, 
+	.admin-color-sunrise.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button .wpib-arrow  {
+		border-top-color: #dd823b;
+	}
+	
+	.admin-color-sunrise.wpib-use-admin-colors .wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button {
+		background: #cf4944;
+	}
+	
+	.admin-color-sunrise#instantButlerDialog.wpib-use-admin-colors  .ib-container {
+	    background-color: #b43c38;
+	    background-color: rgba(180,60,56, 0.95);
+	}
+	
+	.admin-color-sunrise#instantButlerDialog.wpib-use-admin-colors  .tt-suggestion {
+		background-color: #cf4944;
+		background-color: rgba(207,73,68, 0.90);
+		border-bottom: 1px solid #b43c38;
+		border-top: 1px solid #e38683;
+	}
+	
+	.admin-color-sunrise#instantButlerDialog.wpib-use-admin-colors  .tt-suggestion.tt-is-under-cursor {  background-color: #dd823b; background-color: rgba(221,130,59, 0.90); }
+	
+	.admin-color-sunrise#instantButlerDialog.wpib-use-admin-colors  .ib-whitearea .ib-tools .icon.help { background-position: -5px -439px;  }
+	.admin-color-sunrise#instantButlerDialog.wpib-use-admin-colors  .ib-whitearea .ib-tools .icon.help:hover { background-position: -31px -439px; }
+	.admin-color-sunrise#instantButlerDialog.wpib-use-admin-colors  .ib-whitearea .ib-tools .icon.settings { background-position: -5px -414px; }
+	.admin-color-sunrise#instantButlerDialog.wpib-use-admin-colors  .ib-whitearea .ib-tools .icon.settings:hover { background-position: -30px -414px; }
+	
+	.admin-color-sunrise.wpib-use-admin-colors .wpib-backend-textfield-container .wpib-backend-texfield-block label:hover, wpib-backend-wrap a {
+		color: #dd823b;
+	}
+	
+
+/* /////////////////////////////////////////////////// Texfields and checkboxes  */
+
+.wpib-backend-texfield-block, .wpib-backend-texfield-group  {
+	margin-bottom: 20px;
+	background: #f5f5f5;
+	padding: 15px;
+	border: 1px solid #e5e5e5;
+	position: relative;
+}
+
+ .wpib-backend-texfield-group .wpib-backend-texfield-block {
+	border: 0px;
+	padding: 0px;
+}
+
+.wpib-backend-textfield-container .wpib-backend-texfield-group .wpib-backend-texfield-block:last-child {
+	margin-bottom: 0px;
+}
+
+.wpib-backend-texfield-grouping {
+	margin-top: 20px;
+}
+
+.wpib-backend-texfield-grouping:first-child {
+	margin-top: 0px;
+}
+
+.wpib-backend-textfield-container .wpib-backend-texfield-block .wpib-backend-textfield-title {
+	float: left;
+	width: 28%;
+	font-weight: 600;
+}
+
+.wpib-backend-textfield-container .wpib-backend-texfield-block .wpib-backend-textfield-title .title-underline {
+	color: #747474;
+	font-weight: 400;
+	font-size: 11px;
+}
+
+
+
+.wpib-backend-textfield-container .wpib-backend-texfield-block .wpib-backend-textfield-fieldarea {
+	float: left;
+	width: 72%;
+}
+
+/* texfield help block */
+.wpip-backend-textfield-helpblock {
+	font-size: 11px;
+	color: #747474;
+	margin-top: 3px;
+	width: 85%;
+}
+
+/* text fields */
+
+.wpib-backend-wrap input[type=text], .wpib-backend-wrap select {
+	padding: 8px 12px 8px 12px;
+	width: 275px;
+	margin-left: -2px;
+}
+
+.wpib-backend-wrap select {
+	height: 33px !important;
+}
+
+/* checkboxes and radio buttons */
+
+.wpib-backend-textfield-checkbox {
+	margin-top: 15px;
+}
+
+.wpib-backend-textfield-checkbox:first-child, .wpib-backend-textfield-fieldarea:first-child {
+	margin-top: 0;
+}
+
+.wpib-backend-textfield-checkbox .wpip-backend-textfield-helpblock  {
+	padding-left: 31px;
+}
+
+.wpib-own-style .wpib-backend-textfield-checkbox .wpip-backend-textfield-helpblock  {		/* for older wp versions */
+	padding-left: 26px;
+}
+
+.wpib-backend-textfield-checkbox.radio .wpip-backend-textfield-helpblock  {
+	padding-left: 27px;
+}
+
+.wpib-own-style .wpib-backend-textfield-checkbox.radio .wpip-backend-textfield-helpblock  {					/* for older wp versions */
+	padding-left: 22px;
+}
+
+.wpip-backend-textfield-helpblock.no-space {
+	padding-left:0;
+}
+
+.wpib-backend-textfield-checkbox input[type=checkbox], .wpib-backend-textfield-checkbox input[type=radio] {
+	margin-right: 10px;
+}
+
+.wpib-backend-textfield-container .wpib-backend-texfield-block label:hover {
+	color: #4f617e;
+}
+	
+	/* dont show block */
+	.wpib-backend-texfield-block.wpib-dont-show-block {
+		padding-bottom: 0px;
+	}
+	
+	.wpib-backend-texfield-block.wpib-dont-show-block .wpib-backend-textfield-checkbox { 
+		width: 33.333333%; 
+		float: left;  
+		margin-top: 0px !important;
+		margin-bottom: 15px;
+		}
+
+	/* locked feature */
+	.wpib-backend-locked-feature {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: rgba(0,0,0,0.65);
+		width: 100%;
+		height: 100%;
+		color: #fff;
+		z-index: 100;
+	}
+
+	.wpib-backend-locked-feature-container {
+		text-align: center;
+		height: 60px;
+		margin-top: -30px;
+		top:50%;
+		position: absolute;
+		width: 100%;
+	}
+	
+	.wpib-backend-locked-feature.wpib-title-top .wpib-backend-locked-feature-container {
+		margin-top: 0px;
+		top:50px;
+	}
+	
+		.wpib-backend-locked-feature-container .locked-feature-header {
+			font-size: 20px;
+			margin-bottom: 14px;
+		}
+		
+		.wpib-backend-locked-feature-container .locked-feature-button {
+		
+		}
+
+	.wpib-backend-locked-feature-container b {
+		position: relative;
+		left: 6%;
+		top: 6%;
+		font-size: 30px;
+	}
+
+	.wpib-backend-locked-feature-container button {
+		position: absolute;
+		top: 28px;
+		left: 108px;
+	}
+		
+		
+/* /////////////////////////////////////////////////// Custom events */
+
+#wpib-backend-custom-events {
+	margin-top: 20px;
+	position: relative;
+	min-height: 100px;
+}
+
+.wpib-backend-eventRow {
+	background: #f5f5f5;
+	padding: 15px;
+	margin-bottom: 20px;
+	position: relative;
+	border: 1px solid #e5e5e5;
+}
+
+.wpib-backend-removeEvent {
+	position: absolute;
+	right: 15px;
+	color: #555555;
+}
+
+.wpib-backend-removeEvent:hover {
+	color: #e74c3c;
+}
+
+.wpib-backend-eventRow .eventRow-header .eventRow-block {
+	float: left;
+	width: 33.3333333%;
+}
+
+.wpib-backend-eventRow .eventRow-header.description {
+	margin-bottom: 6px;
+}
+
+.wpib-backend-eventRow .eventRow-header .eventRow-block input, 
+.wpib-backend-eventRow .eventRow-header .eventRow-block select {
+	width: 90%;
+}
+
+.wpib-backend-eventRow  .eventRow-textarea {
+	margin-top: 15px;
+}
+ 
+.wpib-backend-eventRow  .eventRow-textarea textarea {
+	width: 97%;
+	padding: 12px;
+}
+
+
+/* /////////////////////////////////////////////////// alert */
+
+.wpib-backend-alert {
+	padding: 15px;
+	background: #f5f5f5;
+	margin-bottom: 20px;
+	color: #555555;
+	position: relative;
+	border: 1px solid #e5e5e5;
+}
+
+.wpib-backend-alert .alert-icon {
+	float: left;
+	width: 22px;
+}
+
+.wpib-backend-alert .alert-content {
+	float: left;
+}
+
+
+	/* Large alert - premium alert */
+	
+	.wpib-backend-alert.large {
+		padding: 24px 20px 20px 20px;
+	}
+	
+	.wpib-backend-alert.large .alert-icon  {
+		font-size: 32px;
+		width: 6%;
+		margin-top: -3px;
+	}
+	
+	.wpib-backend-alert.large .alert-content  {
+		width: 90%;
+		font-size: 15px;
+	}
+	
+	.wpib-backend-alert.large .alert-content h3 {
+		margin: 0px 0px 7px 0px;
+		font-weight: 600;
+		font-size: 18px;
+	}
+
+	.wpib-backend-alert.large .wpib-backend-button {
+		position: absolute;
+		top:50%;
+		right: 6%;
+		margin-top: -18px;
+	}
+	
+	.wpib-backend-alert.large .alert-close {
+		position: absolute;
+		top: 15px;
+		right: 16px;
+		display: block;
+		color: inherit;
+		color: #555555;
+	}
+	
+	.wpib-backend-alert.large .alert-close:hover {
+		color: #e74c3c;
+	}
+	
+	
+	
+/* /////////////////////////////////////////////////// Custom Menu Keywords */
+
+#wpib-backend-customkeywords-list {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	border: 1px solid #e5e5e5;
+	border-bottom: 0px;
+	position: relative;
+}
+
+#wpib-backend-customkeywords-list .wpib-backend-customkeywords-block {
+	padding: 10px 0px 10px 12px;
+	 border-bottom: 1px solid #e5e5e5;
+	/* margin-bottom: 10px; */
+	
+}
+
+#wpib-backend-customkeywords-list .wpib-backend-customkeywords-block:nth-child(odd) {
+	background: #f5f5f5;
+}
+
+	#wpib-backend-customkeywords-list .wpib-backend-customkeywords-block .wpib-field {
+		float: left;
+		width: 50%;
+	}
+	
+	#wpib-backend-customkeywords-list .wpib-backend-customkeywords-block .wpib-title {
+		float: left;
+		width: 35%;
+		margin-top: 10px;
+	}	
+	
+	#wpib-backend-customkeywords-list .wpib-backend-customkeywords-block.header .wpib-title {
+		margin-top: 0px;
+	}
+	
+	#wpib-backend-customkeywords-list .wpib-backend-customkeywords-block.header { 
+		font-weight: bold;
+		padding: 15px 0px 15px 12px;
+		border-bottom: 5px solid #e5e5e5;
+	}
+
+/* /////////////////////////////////////////////////// Header */
+
+.wpib-backend-header h2 {
+	font-size: 20px;
+	font-weight: 400;
+	margin: 0;
+	float: left;
+	display: block;
+}
+
+.wpib-backend-header .wpib-backend-button {
+	display: block;
+	float: left;
+}
+
+/* /////////////////////////////////////////////////// Footer */
+
+.wpib-backend-footer {
+	background: #f5f5f5;
+	padding: 15px;
+	border: 1px solid #e5e5e5;
+}
+
+.wpib-backend-footer .button {
+	float: left;
+}
+
+.wpib-backend-footer small.wpib-backend-status {
+	display: block;
+	float: left;
+	font-size: 12px;
+	margin-top: 7px;
+	margin-left: 10px;
+	color: #5F6060;
+}
+
+/* /////////////////////////////////////////////////// Full access */
+
+.wpib-backend-texfield-block.fullAccess .fa {
+	margin-right: 5px;
+}
+
+.wpib-backend-texfield-block.fullAccess .wpib-backend-button {
+	margin-top: 10px;
+}
+
+
+/* /////////////////////////////////////////////////// Admin notifications */
+
+.updated.wpib-butler-image {
+	position: relative;
+}
+
+.updated.wpib-butler-image .wpib-notice-content {
+	width: 60%;
+}
+
+.wpib-notice-content a.button {
+	margin-right: 5px;
+}
+
+.updated.wpib-butler-image .wpib-notice-image {
+	width: 35%;
+	position: absolute;
+	right: 15px;
+	bottom: -4px;
+	max-width: 250px;
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}
+
+.updated.wpib-butler-image .wpib-notice-image img {
+	width: 100%;
+}
+
+@media screen and (max-width: 782px) {
+  	.updated.wpib-butler-image .wpib-notice-image { bottom: -7px; }
+}
+
+@media screen and (max-width: 782px) {
+	.updated.wpib-butler-image .wpib-notice-image img { width: 120%; }
+}
+
+@media screen and (max-width: 475px) {
+	.updated.wpib-butler-image .wpib-notice-content { width: 100%; }
+	.updated.wpib-butler-image .wpib-notice-image { display: none; }
+}
+
+
+/* /////////////////////////////////////////////////// Admin menu */
+.toplevel_page_instantButler_page .wp-menu-image img, #wp-admin-bar-openInstantButlerDialog a img {
+	width: 16px;
+	height: 16px;
+}
+
+#wp-admin-bar-openInstantButlerDialog a img {
+	margin-top: -3px
+}
+
+/* /////////////////////////////////////////////////// Responsive design */
+
+/* icon top */
+@media screen and (max-width: 782px) {
+	#wp-toolbar>ul>li#wp-admin-bar-openInstantButlerDialog {
+		display: block;
+		overflow: hidden;
+		width: 50px;
+	}
+	#wp-toolbar>ul>li#wp-admin-bar-openInstantButlerDialog a {
+		line-height: 9999px;
+		background-image: url('../img/sprite.svg');
+		background-repeat: no-repeat;
+		background-position: -59px -118px;
+	}
+	
+	#wp-toolbar>ul>li#wp-admin-bar-openInstantButlerDialog a img {
+		display: none !important;
+	}
+	
+	#wp-toolbar>ul>li#wp-admin-bar-openInstantButlerDialog .ab-sub-wrapper {
+		display: none;
+	}
+}
+
+/* dialog */
+@media screen and (max-width: 485px) {
+  #instantButlerDialog {
+  		width: auto !important;
+  		left: 5px !important;
+  		right: 5px !important;
+  		margin-left: 0 !important;
+  		margin-right: 0 !important;
+  		min-width: 260px;
+  }
+  #instantButlerDialog #wp-instantButler-form input {
+  	width: 96% !important;
+  	margin-left: 2% !important;
+  	margin-right: 2% !important;
+  }
+  #instantButlerDialog #wp-instantButler-form {
+  	width: 100% !important;
+  	margin: 0 !important;
+  }
+  
+  #instantButlerDialog .ib-whitearea .ib-tools {
+  	float: none !important;
+  	position: absolute !important;
+  	right: 0px !important;
+  	background: #FFF !important;
+  	padding-left: 10px !important;
+  }
+  #instantButlerDialog .tt-dropdown-menu {
+  	width: auto !important;
+  	right: -20px !important;
+  	left: -20px !important;
+  }
+}
+
+/* settings page */
+@media screen and (max-width: 1030px) {
+	.wpib-backend-wrap .wpib-backend-tabs {
+		width: 98%;
+	}
+	.wpib-backend-wrap {
+		width: 100%;
+	}
+	.wpib-backend-tab-content {
+		width: 98%;
+	}
+	.wpib-backend-footer, .wpib-backend-alert.large  {
+		margin-right: 2%;
+	}
+}
+@media screen and (max-width: 1030px) {
+	.wpib-backend-alert.large .wpib-backend-button {
+		position: relative;
+		top: auto;
+		margin-top: 15px;
+		right: auto;
+	}
+}
+
+@media screen and (max-width: 950px) {
+	.wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab .wpib-backend-tab-button {
+		font-size: 11px;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab {
+		display: block;
+		margin-bottom: 10px;
+	}
+	.wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab-button.wpib-active-button .wpib-arrow {
+		display: none;
+	}
+	.wpib-backend-wrap .wpib-backend-tabs .wpib-backend-tab .wpib-backend-tab-button {
+		font-size: 12px;
+		margin-right: 0px;
+	}
+	.wpib-backend-wrap .wpib-backend-tabs {
+		margin-bottom: 15px;
+	}
+}
+@media screen and (max-width: 700px) {
+	.wpib-backend-alert.large .alert-icon {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 630px) {
+	.wpib-backend-textfield-container .wpib-backend-texfield-block .wpib-backend-textfield-title {
+		float: none;
+		width: 100%;
+		margin-bottom: 8px;
+	}
+	.wpib-backend-textfield-container .wpib-backend-texfield-block .wpib-backend-textfield-fieldarea {
+		float: none;
+		width: 100%;
+	}
+
+	.wpib-backend-wrap input[type=text], .wpib-backend-wrap select {
+		width: 100%;
+	}
+	.wpib-backend-textfield-checkbox input[type=checkbox], .wpib-backend-textfield-checkbox input[type=radio] {
+		clear: both;
+		display: block;
+		margin: auto auto 8px auto;
+	}
+	.wpib-backend-textfield-checkbox {
+		text-align: center;
+		padding-bottom: 10px;
+	}
+}
+
+@media screen and (max-width: 630px) {
+	.wpib-backend-footer small.wpib-backend-status {
+		margin-left: 0px;
+	}
+}
+
+@media screen and (max-width: 530px) {
+	#wpib-backend-customkeywords-list .wpib-backend-customkeywords-block.header {
+		display: none;
+	}
+	#wpib-backend-customkeywords-list .wpib-backend-customkeywords-block .wpib-title, #wpib-backend-customkeywords-list .wpib-backend-customkeywords-block .wpib-field  {
+		width: 100%; 
+		float: none;
+	}	
+	#wpib-backend-customkeywords-list .wpib-backend-customkeywords-block .wpib-field input {
+		width: 98%;
+	}
+	#wpib-backend-customkeywords-list .wpib-backend-customkeywords-block .wpib-title {
+		margin-bottom: 5px;
+		margin-top: 0px;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.wpib-backend-texfield-block.wpib-dont-show-block .wpib-backend-textfield-checkbox {
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.wpib-backend-eventRow .eventRow-header .eventRow-block {
+		width: 100%;
+		float: none;
+		margin-bottom: 10px;
+	}
+	.wpib-backend-eventRow .eventRow-header .eventRow-block.title {
+		display: none;
+	}
+	.wpib-backend-eventRow .eventRow-textarea {
+		margin-top: 0px;
+	}
+	.wpib-backend-tab-content .button, .wpib-backend-footer .button {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	.wpib-backend-alert.large .wpib-backend-button {
+		width: 90%;
+		margin-right: 0px;
+	}
+}
+
+@media screen and (max-width: 330px) {
+	.wpib-backend-texfield-block.wpib-dont-show-block .wpib-backend-textfield-checkbox {
+		width: 100%;
+	}
+	.wpib-backend-wrap .wbib-backend-header .wpib-logo {
+		float: none;
+		margin: auto;
+	}
+	.wpib-backend-wrap .wbib-backend-header h2 {
+		text-align: center;
+		float: none;
+		width: 100%;
+		margin: 12px 0 0 0;
+	}
+	.wpib-backend-wrap .wbib-backend-header {
+		margin-bottom: 0px;
+	}
+	.wpib-backend-wrap .wpib-backend-tabs {
+		margin-top: 0px;
+	}
+}
+
+@media screen and (max-width: 240px) {
+	#instantButlerFigure {
+		left: 15px !important;
+		margin-left: 0 !important; 
+	}
+}
